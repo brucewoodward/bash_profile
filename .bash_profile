@@ -14,5 +14,4 @@ gst()
   git status
 }
 
-echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
 eval "$(rbenv init -)"
