@@ -1,3 +1,4 @@
+# vim: ft=sh
 
 PS1='bruce: $PWD $ '
 export PS1
