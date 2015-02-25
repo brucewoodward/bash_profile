@@ -8,5 +8,11 @@ alias lrt='ls -lrt '
 
 PATH=$PATH:~/bin
 
+gst()
+{
+  git status
+}
+
 echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+eval "$(rbenv init -)"
 eval "$(rbenv init -)"
