@@ -9,9 +9,6 @@ alias lrt='ls -lrt '
 
 PATH=$PATH:~/bin
 
-gst()
-{
-  git status
-}
+alias gst='git status '
 
 eval "$(rbenv init -)"
