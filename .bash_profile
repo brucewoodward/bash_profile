@@ -40,5 +40,4 @@ PATH=$PATH:~/bin
 
 eval "$(rbenv init -)"
 
-PS1='bruce:$(git_ps1_info)\j \W $ '
-export PS1
+export PS1='bruce:$(git_ps1_info)\j \W $ '
