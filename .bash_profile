@@ -2,6 +2,7 @@
 
 set -o vi
 
+## Git functions for PS1
 git_branch()
 {
   if [[ ! -d .git ]]; then
@@ -33,9 +34,17 @@ git_ps1_info()
   fi
 }
 
+## Rails functions
+be()
+{
+  bundle exec $@
+}
+
+## Fav aliases.
 alias lrt='ls -lrt '
 alias gst='git status '
 
+## Runtime setup
 PATH=$PATH:~/bin
 
 eval "$(rbenv init -)"
