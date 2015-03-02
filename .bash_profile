@@ -7,7 +7,7 @@ git_branch()
   if [[ ! -d .git ]]; then
     echo NA
   else
-    branch=$(git branch --no-color)
+    branch=$(git branch --no-color | awk '$1 == "*" {print $NF}')
     echo ${branch#* }
   fi
 }
