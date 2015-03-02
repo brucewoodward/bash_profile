@@ -40,6 +40,16 @@ be()
   bundle exec $@
 }
 
+console()
+{
+  if [[ -e bin/rails ]] # assume rails app
+  then
+    be bin/rails console
+  else
+    echo rails not found
+  fi
+}
+
 ## Fav aliases.
 alias lrt='ls -lrt '
 alias gst='git status '
