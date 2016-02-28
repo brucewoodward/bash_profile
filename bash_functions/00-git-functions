@@ -3,13 +3,13 @@
 ## Git functions for PS1
 git_branch()
 {
-  branch=$(git branch --no-color | awk '$1 == "*" {print $NF}')
+  branch=$(git branch --no-color 2>/dev/null | awk '$1 == "*" {print $NF}')
   echo ${branch#* }
 }
 
 git_ref()
 {
-  ref=$(git log -n 1 --oneline)
+  ref=$(git log -n 1 --oneline 2>/dev/null)
   echo ${ref%% *}
 }
 
