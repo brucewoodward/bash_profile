@@ -8,21 +8,22 @@ die()
 }
 
 set -u
-export bash_functions=~/.bash_functions
+export bash_functions=bash_functions
+export bash_functions_home=~/.bash_functions
 
 # expect to be run from the bash_profile directory.
-if [[ ! -e .bash_functions ]]
+if [[ ! -e $bash_functions ]]
 then
   echo "Run from the bash_profile directory" 1>&2
   exit 1
 fi
 
-if [[ ! -d $bash_functions ]]
+if [[ ! -d $bash_functions_home ]]
 then
-  mkdir $bash_functions || die "Couldn't make bash_functions directory"
+  mkdir $bash_functions_home || die "Couldn't make bash_functions directory"
 fi
 
-if cp -p .bash_functions/* $bash_functions
+if cp -p $bash_functions/* $bash_functions_home
 then
   echo "Copy of bash_fuctions OK"
 else
