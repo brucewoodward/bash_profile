@@ -1,0 +1,37 @@
+#!/bin/bash
+# vim: ft=sh sw=2
+
+die()
+{
+  echo $1 1>&2
+  exit 1
+}
+
+set -u
+export bash_functions=~/.bash_functions
+
+# expect to be run from the bash_profile directory.
+if [[ ! -e .bash_functions ]]
+then
+  echo "Run from the bash_profile directory" 1>&2
+  exit 1
+fi
+
+if [[ ! -d $bash_functions ]]
+then
+  mkdir $bash_functions || die "Couldn't make bash_functions directory"
+fi
+
+if cp -p .bash_functions/* $bash_functions
+then
+  echo "Copy of bash_fuctions OK"
+else
+  echo "Copy of bash_fuctions Failed"
+fi
+
+if cp .bash_profile ~/.bash_profile
+then
+  echo "Copy of bash_profile OK"
+else
+  echo "Copy of bash_profile FAILED"
+fi

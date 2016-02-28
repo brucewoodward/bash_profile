@@ -1,0 +1,27 @@
+# vim: ft=sh sw=2
+
+## Rails functions
+be()
+{
+  bundle exec $@
+}
+
+console()
+{
+  if [[ -e bin/rails ]] # assume rails app
+  then
+    be rails console
+  else
+    echo rails not found
+  fi
+}
+
+server()
+{
+  if [[ -e bin/rails ]]
+  then
+    be rails server
+  else
+    echo rails not found
+  fi
+}

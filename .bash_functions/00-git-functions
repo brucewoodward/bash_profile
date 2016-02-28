@@ -1,0 +1,27 @@
+# vim: ft=sh sw=2
+
+## Git functions for PS1
+git_branch()
+{
+  branch=$(git branch --no-color | awk '$1 == "*" {print $NF}')
+  echo ${branch#* }
+}
+
+git_ref()
+{
+  ref=$(git log -n 1 --oneline)
+  echo ${ref%% *}
+}
+
+git_ps1_info()
+{
+  branch=$(git_branch)
+  if [[ -z $branch ]]
+  then
+    echo ''
+  else 
+    ref=$(git_ref)
+    echo "($branch:$ref):"
+  fi
+}
+

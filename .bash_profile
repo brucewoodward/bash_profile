@@ -2,53 +2,23 @@
 
 set -o vi
 
-## Git functions for PS1
-git_branch()
-{
-  if [[ ! -d .git ]]; then
-    echo NA
-  else
-    branch=$(git branch --no-color | awk '$1 == "*" {print $NF}')
-    echo ${branch#* }
-  fi
-}
+# load functions
+bash_functions=~/.bash_functions
+if [[ -d ~/.bash_functions ]]
+then
+    cd $bash_functions
+else
+    echo "Problem with bash_function directory" 2>&1
+    exit 1
+fi
 
-git_ref()
-{
-  if [[ ! -d .git ]]; then
-    echo NA
-  else
-    ref=$(git log -n 1 --oneline)
-    echo ${ref%% *}
-  fi
-}
-
-git_ps1_info()
-{
-  branch=$(git_branch)
-  ref=$(git_ref)
-  if [[ $branch = NA ]]; then
-    echo ''
-  else
-    echo "($branch:$ref):"
-  fi
-}
-
-## Rails functions
-be()
-{
-  bundle exec $@
-}
-
-console()
-{
-  if [[ -e bin/rails ]] # assume rails app
-  then
-    be bin/rails console
-  else
-    echo rails not found
-  fi
-}
+# source bash_functions
+# expect current directory to be $bash_functions
+for f in *
+do
+    source $f
+done
+cd ~      # go home
 
 ## Fav aliases.
 alias lrt='ls -lrt '
