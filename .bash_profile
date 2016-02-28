@@ -18,7 +18,7 @@ for f in *
 do
     source $f
 done
-cd ~      # go home
+cd - 1>/dev/null 2>&1      # go to previous directory
 
 ## Fav aliases.
 alias lrt='ls -lrt '
