@@ -23,10 +23,24 @@ cd - 1>/dev/null 2>&1      # go to previous directory
 ## Fav aliases.
 alias lrt='ls -lrt '
 alias gst='git status '
+alias cdc='clear;cd '
+alias psg='ps -ef | grep '
 
 ## Runtime setup
 PATH=$PATH:~/bin
 
 eval "$(rbenv init -)"
 
+bind "set completion-ignore-case on"
+bind "set completion-map-case on"
+bind "set show-all-if-ambiguous on"
+
+export HISTCONTROL="ignoredups:erasedups" # no duplicate entries
+export HISTSIZE=100000                    # big big history
+export HISTFILESIZE=100000                # big big history
+export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear:cdc:lrt:gst:psg"
+export PROMPT_COMMAND="history -a"
+shopt -s histappend
+
 export PS1='bruce:$(git_ps1_info)\j \W $ '
+export CDPATH=/Users/bruce/code
