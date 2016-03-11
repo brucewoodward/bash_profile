@@ -8,15 +8,14 @@ git_branch()
   if [[ $? -ne 0 ]]
   then
     echo ''
+  else
+    echo $branch
   fi
-  echo $branch
 }
 
 git_ref()
 {
-  typeset ref
-  ref=$(git log -n 1 --oneline 2>/dev/null)
-  echo ${ref%% *}
+  git log -1 --pretty=format:%h 2>/dev/null
 }
 
 git_state()
