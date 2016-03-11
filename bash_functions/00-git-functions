@@ -3,25 +3,40 @@
 ## Git functions for PS1
 git_branch()
 {
+  typeset branch
   branch=$(git branch --no-color 2>/dev/null | awk '$1 == "*" {print $NF}')
   echo ${branch#* }
 }
 
 git_ref()
 {
+  typeset ref
   ref=$(git log -n 1 --oneline 2>/dev/null)
   echo ${ref%% *}
 }
 
+git_state()
+{
+  test -z "$(git status --porcelain)" && echo clean || echo dirty
+}
+
 git_ps1_info()
 {
+  typeset branch= ref= state= color= color_reset="\e[0m"
   branch=$(git_branch)
   if [[ -z $branch ]]
   then
     echo ''
   else 
     ref=$(git_ref)
-    echo "($branch:$ref):"
+    state=$(git_state)
+    if [[ $state = "clean" ]]
+    then
+      color="\e[32m" # green
+    else
+      color="\e[31m" # red
+    fi
+    echo -e "($branch:$ref:$color$state$color_reset):"
   fi
 }
 
