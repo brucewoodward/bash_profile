@@ -4,8 +4,12 @@
 git_branch()
 {
   typeset branch
-  branch=$(git branch --no-color 2>/dev/null | awk '$1 == "*" {print $NF}')
-  echo ${branch#* }
+  branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+  if [[ $? -ne 0 ]]
+  then
+    echo ''
+  fi
+  echo $branch
 }
 
 git_ref()
@@ -39,4 +43,3 @@ git_ps1_info()
     echo -e "($branch:$ref:$color$state$color_reset):"
   fi
 }
-
