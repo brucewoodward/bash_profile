@@ -25,13 +25,3 @@ git_ps1_info()
   fi
 }
 
-gst()
-{
-    git status $@
-}
-
-glog()
-{
-    git log --oneline --decorate $@
-}
-
