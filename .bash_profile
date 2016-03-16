@@ -21,6 +21,7 @@ done
 cd - 1>/dev/null 2>&1      # go to previous directory
 
 ## Fav aliases.
+alias ll='ls -l '
 alias lrt='ls -lrt '
 alias gst="git status; git stash list --pretty=format:'%gd: %Cblue%h%Creset %Cgreen[%ar]%Creset %s'"
 alias cdc='clear; tput reset; cd '
