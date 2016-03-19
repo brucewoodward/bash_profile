@@ -26,7 +26,6 @@ alias lrt='ls -lrt '
 alias gst="git status; git stash list --pretty=format:'%gd: %Cblue%h%Creset %Cgreen[%ar]%Creset %s'"
 alias cdc='clear; tput reset; cd '
 alias psg='ps -ef | grep '
-alias dl='cd ~/Downloads && ls -lrt'
 
 ## Runtime setup
 PATH=$PATH:~/bin
@@ -53,3 +52,5 @@ export CDPATH=.:/Users/bruce/code
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
+
+export EDITOR=vim
