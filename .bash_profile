@@ -54,3 +54,6 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 fi
 
 export EDITOR=vim
+
+export LESS_TERMCAP_so=$(tput bold; tput setaf 7; tput setab 0)
+export LESS_TERMCAP_se=$(tput rmso; tput sgr0)
