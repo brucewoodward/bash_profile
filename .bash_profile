@@ -30,6 +30,7 @@ alias lrt='ls -lrt '
 alias gst="git status; git stash list --pretty=format:'%gd: %Cblue%h%Creset %Cgreen[%ar]%Creset %s'"
 alias cdc='clear; tput reset; cd '
 alias psg='ps -ef | grep '
+alias v='vim '
 
 bind "set completion-ignore-case on"
 bind "set completion-map-case on"
@@ -55,6 +56,8 @@ PATH=$PATH:~/bin
 
 # Exit if this is isn't a login shell.
 shopt -q login_shell || return 0
+
+export PAGER=vimpager
 
 # Everything below this point is only going to happen if this is a login shell.
 load_bash_functions
