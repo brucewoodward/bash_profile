@@ -28,6 +28,7 @@ load_bash_functions()
 alias ll='ls -l '
 alias lrt='ls -lrt '
 alias gst="git status; git stash list --pretty=format:'%gd: %Cblue%h%Creset %Cgreen[%ar]%Creset %s'"
+alias glog="git log --oneline --decorate "
 alias cdc='clear; tput reset; cd '
 alias psg='ps -ef | grep '
 alias v='vim '
