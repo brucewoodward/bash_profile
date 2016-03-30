@@ -58,8 +58,6 @@ PATH=$PATH:~/bin
 # Exit if this is isn't a login shell.
 shopt -q login_shell || return 0
 
-export PAGER=vimpager
-
 # Everything below this point is only going to happen if this is a login shell.
 load_bash_functions
 
