@@ -33,12 +33,6 @@ git_ps1_info()
   else 
     ref=$(git_ref)
     state=$(git_state)
-    if [[ $state = "clean" ]]
-    then
-      color="\e[32m" # green
-    else
-      color="\e[31m" # red
-    fi
-    echo -e "($branch:$ref:$color$state$color_reset):"
+    echo -e "($branch:$ref:$state):"
   fi
 }
