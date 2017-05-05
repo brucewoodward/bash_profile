@@ -74,3 +74,5 @@ export LESS_TERMCAP_se=$(tput rmso; tput sgr0)
 
 export GOPATH=~/go
 export PATH=$PATH:/usr/local/m-cli:$GOPATH/bin
+
+source ~/perl5/perlbrew/etc/bashrc
