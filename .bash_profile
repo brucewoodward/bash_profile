@@ -71,3 +71,6 @@ export PS1='bruce:$(git_ps1_info)\j \W $ '
 
 export LESS_TERMCAP_so=$(tput bold; tput setaf 7; tput setab 0)
 export LESS_TERMCAP_se=$(tput rmso; tput sgr0)
+
+export GOPATH=~/go
+export PATH=$PATH:/usr/local/m-cli:$GOPATH/bin
