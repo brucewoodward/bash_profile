@@ -44,6 +44,7 @@ export HISTCONTROL="ignoredups:erasedups" # no duplicate entries
 export HISTSIZE=100000                    # big big history
 export HISTFILESIZE=100000                # big big history
 export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear:cdc:lrt:gst:psg"
+export HISTTIMEFORMAT="%Y%m%d %T "
 export PROMPT_COMMAND="history -a; history -n"
 shopt -s histappend
 shopt -s cmdhist
