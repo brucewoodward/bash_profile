@@ -65,14 +65,11 @@ shopt -q login_shell || return 0
 # Everything below this point is only going to happen if this is a login shell.
 load_bash_functions
 
-eval "$(rbenv init -)"
-
 export PS1='bruce:$(git_ps1_info)\j \W $ '
 
 export LESS_TERMCAP_so=$(tput bold; tput setaf 7; tput setab 0)
 export LESS_TERMCAP_se=$(tput rmso; tput sgr0)
 
 export GOPATH=~/go
-export PATH=$PATH:/usr/local/m-cli:$GOPATH/bin
-
-source ~/perl5/perlbrew/etc/bashrc
+export PATH=$PATH:$GOPATH/bin:/home/linuxbrew/.linuxbrew/bin
+eval "$(rbenv init -)"
