@@ -36,6 +36,9 @@ alias v='vim '
 alias lg='ls | egrep "$@"'
 alias lgi='ls | egrep -i "$@"'
 
+# I know
+alias grpe='grep '
+
 bind "set completion-ignore-case on"
 bind "set completion-map-case on"
 bind "set show-all-if-ambiguous on"
