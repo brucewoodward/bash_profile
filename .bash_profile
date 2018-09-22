@@ -60,7 +60,7 @@ export EDITOR=vim
 export PS1='bruce:\j \W $ '
 
 ## Runtime setup
-PATH=$PATH:~/bin
+PATH=/home/linuxbrew/.linuxbrew/bin:~/bin:/usr/bin:/usr/local/bin
 
 # Exit if this is isn't a login shell.
 shopt -q login_shell || return 0
@@ -74,5 +74,5 @@ export LESS_TERMCAP_so=$(tput bold; tput setaf 7; tput setab 0)
 export LESS_TERMCAP_se=$(tput rmso; tput sgr0)
 
 export GOPATH=~/go
-export PATH=$PATH:$GOPATH/bin:/home/linuxbrew/.linuxbrew/bin
+export PATH=$PATH:$GOPATH/bin
 eval "$(rbenv init -)"
