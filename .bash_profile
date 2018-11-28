@@ -60,7 +60,7 @@ export EDITOR=vim
 export PS1='bruce:\j \W $ '
 
 ## Runtime setup
-PATH=/home/linuxbrew/.linuxbrew/bin:~/bin:/usr/bin:/usr/local/bin
+export PATH=/home/linuxbrew/.linuxbrew/bin:~/bin:/bin:/usr/bin:/usr/local/bin
 
 # Exit if this is isn't a login shell.
 shopt -q login_shell || return 0
