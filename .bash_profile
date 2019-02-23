@@ -1,6 +1,6 @@
 # vim: ft=sh
 
-set -o vi
+set -o emacs
 
 load_bash_functions()
 {
