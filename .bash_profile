@@ -58,7 +58,7 @@ export CDPATH=.:/Users/bruce/code
 export EDITOR=vim
 
 # Feature of brew on linux?
-export LD_LIBRARY_PATH=/home/linuxbrew/.linuxbrew/Cellar/openssl/1.0.2q_2/lib
+#export LD_LIBRARY_PATH=/home/linuxbrew/.linuxbrew/Cellar/openssl/1.0.2q_2/lib
 
 export PS1='bruce:\j \W $ '
 
@@ -80,4 +80,6 @@ export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin
 eval "$(rbenv init -)"
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+unset -f command_not_found_handle 2>/dev/null
