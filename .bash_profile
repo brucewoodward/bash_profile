@@ -38,10 +38,12 @@ alias lgi='ls | egrep -i "$@"'
 
 # I know
 alias grpe='grep '
+alias mysql='mysql -b '
 
 bind "set completion-ignore-case on"
 bind "set completion-map-case on"
 bind "set show-all-if-ambiguous on"
+bind "set colored-completion-prefix"
 
 export HISTCONTROL="ignoredups:erasedups" # no duplicate entries
 export HISTSIZE=100000                    # big big history
@@ -60,10 +62,11 @@ export EDITOR=vim
 # Feature of brew on linux?
 #export LD_LIBRARY_PATH=/home/linuxbrew/.linuxbrew/Cellar/openssl/1.0.2q_2/lib
 
-export PS1='bruce:\j \W $ '
+#export PS1='bruce:\j \A \W $ '
 
 ## Runtime setup
-export PATH=/home/linuxbrew/.linuxbrew/bin:~/bin:/bin:/usr/bin:/usr/local/bin
+#export PATH=/home/linuxbrew/.linuxbrew/{sbin,bin}:~/bin:/bin:/usr/bin:/usr/local/bin
+export PATH=~/bin:/bin:/usr/bin:/usr/local/bin:~/.local/bin
 
 # Exit if this is isn't a login shell.
 shopt -q login_shell || return 0
@@ -71,15 +74,17 @@ shopt -q login_shell || return 0
 # Everything below this point is only going to happen if this is a login shell.
 load_bash_functions
 
-export PS1='bruce:$(git_ps1_info)\j \W $ '
+export PS1='bruce:$(git_ps1_info)/\j/\A \W $ '
 
 export LESS_TERMCAP_so=$(tput bold; tput setaf 7; tput setab 0)
 export LESS_TERMCAP_se=$(tput rmso; tput sgr0)
 
 export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin
+export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 #[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 unset -f command_not_found_handle 2>/dev/null
+. "$HOME/.cargo/env"
