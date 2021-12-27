@@ -13,11 +13,6 @@ git_branch()
   fi
 }
 
-git_ref()
-{
-  git log -1 --pretty=format:%h 2>/dev/null
-}
-
 git_state()
 {
   test -z "$(git status --porcelain)" && echo clean || echo dirty
@@ -25,14 +20,13 @@ git_state()
 
 git_ps1_info()
 {
-  typeset branch= ref= state= color= color_reset="\e[0m"
+  typeset branch= state= color_reset="\e[0m"
   branch=$(git_branch)
   if [[ -z $branch ]]
   then
     echo ''
   else 
-    ref=$(git_ref)
     state=$(git_state)
-    echo -e "($branch:$ref:$state)"
+    echo -e "($branch:$state)"
   fi
 }
