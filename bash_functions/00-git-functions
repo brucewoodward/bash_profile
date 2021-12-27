@@ -33,6 +33,6 @@ git_ps1_info()
   else 
     ref=$(git_ref)
     state=$(git_state)
-    echo -e "($branch:$ref:$state):"
+    echo -e "($branch:$ref:$state)"
   fi
 }

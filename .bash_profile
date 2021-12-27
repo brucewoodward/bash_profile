@@ -74,17 +74,17 @@ shopt -q login_shell || return 0
 # Everything below this point is only going to happen if this is a login shell.
 load_bash_functions
 
-export PS1='bruce:$(git_ps1_info)/\j/\A \W $ '
+export PS1='bruce/$(git_ps1_info)/\H/\j/\A \W $ '
 
 export LESS_TERMCAP_so=$(tput bold; tput setaf 7; tput setab 0)
 export LESS_TERMCAP_se=$(tput rmso; tput sgr0)
 
 export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
-#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-unset -f command_not_found_handle 2>/dev/null
-. "$HOME/.cargo/env"
+#export PATH="$HOME/.rbenv/bin:$PATH"
+#eval "$(rbenv init -)"
+#
+##[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+#
+#unset -f command_not_found_handle 2>/dev/null
+#. "$HOME/.cargo/env"
