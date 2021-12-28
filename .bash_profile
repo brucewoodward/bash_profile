@@ -59,6 +59,8 @@ shopt -s globstar
 export CDPATH=.:/Users/bruce/code
 export EDITOR=vim
 
+export VLC_VERBOSE=0
+
 # Feature of brew on linux?
 #export LD_LIBRARY_PATH=/home/linuxbrew/.linuxbrew/Cellar/openssl/1.0.2q_2/lib
 
