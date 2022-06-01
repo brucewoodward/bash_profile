@@ -87,9 +87,9 @@ export LESS_TERMCAP_se=$(tput rmso; tput sgr0)
 
 export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin
-#export PATH="$HOME/.rbenv/bin:$PATH"
-#eval "$(rbenv init -)"
-#
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
 ##[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 #
 #unset -f command_not_found_handle 2>/dev/null
