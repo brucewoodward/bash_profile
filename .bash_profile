@@ -40,6 +40,11 @@ alias lgi='ls | egrep -i "$@"'
 alias grpe='grep '
 alias mysql='mysql -b '
 
+alias a='ansible '
+alias ap='ansible-playbook '
+alias as='ansible-playbook --syntax-check '
+alias ad='ansible-doc '
+
 bind "set completion-ignore-case on"
 bind "set completion-map-case on"
 bind "set show-all-if-ambiguous on"
@@ -65,8 +70,7 @@ export EDITOR=vim
 #export PS1='bruce:\j \A \W $ '
 
 ## Runtime setup
-#export PATH=/home/linuxbrew/.linuxbrew/{sbin,bin}:~/bin:/bin:/usr/bin:/usr/local/bin
-export PATH=~/bin:/bin:/usr/bin:/usr/local/bin:~/.local/bin
+export PATH=~/bin:/usr/bin:/usr/local/bin:~/.local/bin
 
 # Exit if this is isn't a login shell.
 shopt -q login_shell || return 0
@@ -79,8 +83,10 @@ export PS1='bruce:$(git_ps1_info)/\j/\A \W $ '
 export LESS_TERMCAP_so=$(tput bold; tput setaf 7; tput setab 0)
 export LESS_TERMCAP_se=$(tput rmso; tput sgr0)
 
-export GOPATH=~/go
-export PATH=$PATH:$GOPATH/bin
+export GOROOT=/usr/local/go
+export GOPATH=/usr/local/go/src
+export GOBIN=/usr/local/go/bin
+
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
