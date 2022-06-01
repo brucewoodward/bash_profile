@@ -94,3 +94,5 @@ eval "$(rbenv init -)"
 #
 #unset -f command_not_found_handle 2>/dev/null
 #. "$HOME/.cargo/env"
+
+alias fugitive_doco='vim ~/.vim/pack/plugins/start/vim-fugitive/doc/fugitive.txt'
