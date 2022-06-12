@@ -46,6 +46,11 @@ alias C='cal -3'
 alias grpe='grep '
 alias mysql='mysql -b '
 
+alias a='ansible '
+alias ap='ansible-playbook '
+alias as='ansible-playbook --syntax-check '
+alias ad='ansible-doc '
+
 bind "set completion-ignore-case on"
 bind "set completion-map-case on"
 bind "set show-all-if-ambiguous on"
@@ -73,8 +78,7 @@ export VLC_VERBOSE=0
 #export PS1='bruce:\j \A \W $ '
 
 ## Runtime setup
-#export PATH=/home/linuxbrew/.linuxbrew/{sbin,bin}:~/bin:/bin:/usr/bin:/usr/local/bin
-export PATH=~/bin:/bin:/usr/bin:/usr/local/bin:~/.local/bin
+export PATH=~/bin:/usr/bin:/usr/local/bin:~/.local/bin
 
 # Exit if this is isn't a login shell.
 shopt -q login_shell || return 0
@@ -89,10 +93,12 @@ export LESS_TERMCAP_se=$(tput rmso; tput sgr0)
 
 export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin
-#export PATH="$HOME/.rbenv/bin:$PATH"
-#eval "$(rbenv init -)"
-#
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
 ##[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 #
 #unset -f command_not_found_handle 2>/dev/null
 #. "$HOME/.cargo/env"
+
+alias fugitive_doco='vim ~/.vim/pack/plugins/start/vim-fugitive/doc/fugitive.txt'
