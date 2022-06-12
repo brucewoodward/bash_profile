@@ -42,6 +42,8 @@ alias lg='ls | egrep "$@"'
 alias lgi='ls | egrep -i "$@"'
 alias C='cal -3'
 
+alias sshx='ssh -X '
+
 # I know
 alias grpe='grep '
 alias mysql='mysql -b '
