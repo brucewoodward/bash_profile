@@ -33,8 +33,16 @@ alias cdc='clear; tput reset; cd '
 alias psg='ps -ef | grep '
 alias v='vim '
 
+cdl()
+{
+        cd ~/Downloads
+}
+
 alias lg='ls | egrep "$@"'
 alias lgi='ls | egrep -i "$@"'
+alias C='cal -3'
+
+alias sshx='ssh -X '
 
 # I know
 alias grpe='grep '
