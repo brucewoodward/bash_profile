@@ -104,3 +104,11 @@ eval "$(rbenv init -)"
 #. "$HOME/.cargo/env"
 
 alias fugitive_doco='vim ~/.vim/pack/plugins/start/vim-fugitive/doc/fugitive.txt'
+
+export BUN_INSTALL="/home/bruce/.bun"
+PATH="$BUN_INSTALL/bin:$PATH"
+
+if [[ -e /opt/local/bin/vim ]]
+then
+        alias vim='/opt/local/bin/vim '
+fi
