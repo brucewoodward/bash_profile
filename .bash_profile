@@ -112,3 +112,7 @@ if [[ -e /opt/local/bin/vim ]]
 then
         alias vim='/opt/local/bin/vim '
 fi
+
+# >>> coursier install directory >>>
+export PATH="$PATH:/home/bruce/.local/share/coursier/bin"
+# <<< coursier install directory <<<
