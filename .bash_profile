@@ -32,6 +32,7 @@ alias glog="git log --oneline --decorate "
 alias cdc='clear; tput reset; cd '
 alias psg='ps -ef | grep '
 alias v='vim '
+alias g='grep -i '
 
 cdl()
 {
